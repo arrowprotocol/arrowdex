@@ -1,6 +1,6 @@
 import { PublicKey } from "@solana/web3.js";
 import * as fs from "fs/promises";
-import { groupBy } from "lodash";
+import { groupBy, mapValues } from "lodash";
 
 import arrows from "../data/arrows.json";
 
@@ -16,7 +16,10 @@ export const aggregateTokenAccounts = async (): Promise<void> => {
     }))
     .filter((t) => t.mint !== PublicKey.default.toString());
 
-  const groups = groupBy(accounts, (tok) => tok.mint);
+  const groups = mapValues(
+    groupBy(accounts, (tok) => tok.mint),
+    (v) => v.map((e) => e.account)
+  );
   await fs.mkdir("data/", { recursive: true });
   await fs.writeFile("data/token-accounts.json", JSON.stringify(groups));
   console.log(
