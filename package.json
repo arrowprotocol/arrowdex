@@ -1,5 +1,6 @@
 {
-  "name": "arrowdex",
+  "name": "@arrowprotocol/arrowdex",
+  "private": true,
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:arrowprotocol/arrowdex.git",
@@ -37,6 +38,11 @@
   },
   "scripts": {
     "sync": "ts-node src/fetchAllArrows.ts",
-    "aggregate": "ts-node src/aggregateTokenAccounts.ts"
+    "aggregate": "ts-node src/aggregateTokenAccounts.ts",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.ts": "eslint --cache --fix",
+    "*.{md,json,js,yml,yaml}": "prettier --write"
   }
 }
