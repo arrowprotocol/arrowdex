@@ -39,6 +39,7 @@
   "scripts": {
     "sync": "ts-node src/fetchAllArrows.ts",
     "aggregate": "ts-node src/aggregateTokenAccounts.ts",
+    "group-by-beneficiary": "ts-node src/groupByBeneficiary.ts",
     "prepare": "husky install"
   },
   "lint-staged": {
