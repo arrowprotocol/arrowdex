@@ -21,7 +21,10 @@ export const aggregateTokenAccounts = async (): Promise<void> => {
     (v) => v.map((e) => e.account)
   );
   await fs.mkdir("data/", { recursive: true });
-  await fs.writeFile("data/token-accounts.json", JSON.stringify(groups));
+  await fs.writeFile(
+    "data/token-accounts.json",
+    JSON.stringify(groups, null, 2)
+  );
   console.log(
     `Filtered and wrote ${accounts.length} accounts across ${
       Object.keys(groups).length

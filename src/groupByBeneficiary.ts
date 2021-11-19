@@ -17,7 +17,10 @@ export const groupByBeneficiary = async (): Promise<void> => {
     (v) => v.map((e) => e.beneficiary)
   );
   await fs.mkdir("data/", { recursive: true });
-  await fs.writeFile("data/arrows-by-beneficiary.json", JSON.stringify(groups));
+  await fs.writeFile(
+    "data/arrows-by-beneficiary.json",
+    JSON.stringify(groups, null, 2)
+  );
   console.log(
     `Filtered and wrote ${accounts.length} accounts across ${
       Object.keys(groups).length

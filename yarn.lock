@@ -48,6 +48,7 @@ __metadata:
     eslint-import-resolver-node: ^0.3.6
     eslint-plugin-import: ^2.25.3
     husky: ^7.0.4
+    jsbi: ^4.1.0
     lint-staged: ^12.0.2
     lodash: ^4.17.21
     prettier: ^2.4.1
@@ -2579,6 +2580,13 @@ __metadata:
   bin:
     js-yaml: bin/js-yaml.js
   checksum: c7830dfd456c3ef2c6e355cc5a92e6700ceafa1d14bba54497b34a99f0376cecbb3e9ac14d3e5849b426d5a5140709a66237a8c991c675431271c4ce5504151a
+  languageName: node
+  linkType: hard
+
+"jsbi@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "jsbi@npm:4.1.0"
+  checksum: 3d7e86956482e0e3c31e796af40accfb246c64e246e4d69a8b6aef182a02fdbae8c53b09bb476b4936cd47e4d95b60b8b0f8d1e9a69070c9a118f32f2c9584b6
   languageName: node
   linkType: hard
 

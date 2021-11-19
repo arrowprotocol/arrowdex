@@ -27,12 +27,16 @@ export const fetchAllArrows = async (): Promise<void> => {
   await fs.mkdir("data/", { recursive: true });
   await fs.writeFile(
     "data/arrows.json",
-    JSON.stringify(arrows, (_, v: unknown) => {
-      if (v instanceof PublicKey) {
-        return v.toString();
-      }
-      return v;
-    })
+    JSON.stringify(
+      arrows,
+      (_, v: unknown) => {
+        if (v instanceof PublicKey) {
+          return v.toString();
+        }
+        return v;
+      },
+      2
+    )
   );
   console.log(`Discovered and wrote ${arrows.length} arrows.`);
 };
